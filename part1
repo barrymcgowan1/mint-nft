@@ -1,0 +1,13 @@
+const {
+  InMemorySigner,
+  Client,
+  NFT,
+  Transaction
+} = require("@solana/web3.js");
+
+async function mintNFT(tokenProgramId, mintAuthority, metadata) {
+  // Create a client
+  const client = new Client("https://testnet.solana.com");
+
+  // Create a signer with a secret key
+  const signer = new InMemorySigner("YOUR_SECRET_KEY");
