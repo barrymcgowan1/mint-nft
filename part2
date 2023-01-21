@@ -1,0 +1,17 @@
+// Create an NFT instance
+  const nft = new NFT(client, tokenProgramId);
+
+  // Mint the NFT
+  const tx = await nft.mint({
+    mintAuthority,
+    to: signer.publicKey,
+    metadata
+  });
+
+  // Send the transaction
+  await client.sendTransaction(tx, signer);
+
+  console.log("NFT minted successfully!");
+}
+
+mintNFT("TOKEN_PROGRAM_ID", "MINT_AUTHORITY", "metadata");
